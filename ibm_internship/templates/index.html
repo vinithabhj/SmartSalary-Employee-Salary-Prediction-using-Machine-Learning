@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartSalary - Employee Salary Prediction</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+      margin-bottom: 2rem;
+    }
+    main {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 1rem;
+    }
+    form {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      max-width: 450px;
+      width: 100%;
+      backdrop-filter: blur(10px);
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+    }
+    input:focus, select:focus {
+      box-shadow: 0 0 8px 3px #f6a821;
+    }
+    button {
+      width: 100%;
+      background: #f6a821;
+      color: #333;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 5px 15px rgba(246,168,33,0.5);
+    }
+    button:hover {
+      background: #e69500;
+      box-shadow: 0 7px 20px rgba(230,149,0,0.7);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>SmartSalary: Employee Salary Prediction</header>
+  <main>
+    <form method="POST" action="/predict">
+      <label for="experience_level">Experience Level</label>
+      <select name="experience_level" id="experience_level" required>
+        <option value="" disabled selected>Select experience level</option>
+        <option value="EN">Entry-level</option>
+        <option value="MI">Mid-level</option>
+        <option value="SE">Senior-level</option>
+        <option value="EX">Executive-level</option>
+      </select>
+
+      <label for="employment_type">Employment Type</label>
+      <select name="employment_type" id="employment_type" required>
+        <option value="" disabled selected>Select employment type</option>
+        <option value="FT">Full-time</option>
+        <option value="PT">Part-time</option>
+        <option value="CT">Contract</option>
+        <option value="FL">Freelance</option>
+      </select>
+
+      <label for="job_title">Job Title</label>
+      <input type="text" name="job_title" id="job_title" placeholder="e.g. Data Scientist" required />
+
+      <label for="remote_ratio">Remote Ratio (0-100%)</label>
+      <input type="number" name="remote_ratio" id="remote_ratio" min="0" max="100" placeholder="0 for onsite, 100 for fully remote" required />
+
+      <label for="company_size">Company Size</label>
+      <select name="company_size" id="company_size" required>
+        <option value="" disabled selected>Select company size</option>
+        <option value="S">Small (&lt;50)</option>
+        <option value="M">Medium (50-250)</option>
+        <option value="L">Large (&gt;250)</option>
+      </select>
+
+      <button type="submit">Predict Salary</button>
+    </form>
+  </main>
+  <footer>© 2025 SmartSalary Project by You</footer>
+</body>
+</html>
