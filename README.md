@@ -20,11 +20,3 @@ Data Processing: Pandas, NumPy
 
 Frontend: HTML, CSS, Bootstrap
 
-Would you like me to include sections for:
-
-🛠️ Installation & Running locally
-
-📸 Screenshots
-
-📝 License
-Let me know!
